@@ -1,6 +1,6 @@
 ---
 title: Intermediate Microeconomics - Ch3 Preferences
-date: 2019-11-05 14:42:00
+date: 2019-11-05
 categories:
 - notes
 tags: 
