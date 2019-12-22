@@ -33,3 +33,9 @@ NexT is built for easily use with elegant appearance. First things first, always
 支付宝捐赠链接还是要有的，万一真的有人捐呢。
 
 ![支付宝扫码捐赠](http://7lryc0.com1.z0.glb.clouddn.com/a6x049034plyvjm1rvn4h28%20%281%29.png)
+
+
+# 测试
+
+Terminal中输入：`$ bundle exec jekyll server`
+然后打开浏览器，输入`127.0.0.1:4000`即可。
