@@ -55,11 +55,11 @@ $$
 
 一个策略组合(strategy profile)$\beta(\cdot)$称为机制的一个贝叶斯纳什均衡(Beyasian Nash equilibrium)，如果对任意的$i$和$X_i$，给定其他买家的策略$\beta_{-i}$，$\beta_i(x_i)$都最大化了买家$i$的期望回报。
 
-### 直接机制（Direct Mechanisms）
+### 直接机制(Direct Mechanisms)
 
 在对信息集$\mathcal{B}_i$没有做任何限定的情况下，一个机制可能会非常复杂。比如，买家可以向卖家提供报价，也可以向卖家说明其购买的意愿(明确的“买”或“不买”)，或者是提供其他一些形式复杂的信息，这无疑会给讨论带来麻烦。接下来对机制的讨论将限定在一类结构简单的机制上，并且我们将进一步证明：对这一类机制的研究足以涵盖所有情形。
 
-#### 直接机制的定义
+#### 定义
 
 如果一个机制满足$\mathcal{B} = \mathcal{X}$（对任意的i，$\mathcal{B}_i = \mathcal{X}_i$）。因为在这类机制中，每一个买家都被要求直接提供一个数字(报价)，而不是其他形式的信息，所以这种机制被称为“直接机制”。
 
@@ -80,19 +80,19 @@ $$
 
 - 该直接机制存在一个truthful equilibrium。
 
-证明：
+**证明**：
 
 定义$Q = \pi \circ \beta$，$M = \mu \circ \beta$，则自然有
 $(Q(x), M(x)) = (\pi(\beta(x)), \mu(\beta(x)))$，因此两者有相同的结果。
 
 为证明该直接机制存在一个truthful equilibrium，只需验证$\tilde{\beta}(x)=x$是一个贝叶斯纳什均衡：
 
-对第i个买家，设其value为$x_i$，记他的最佳信息为$m^*(x_i)$，其他买家($j \neq i$)的value和message都是$x_j$，则有
+对第i个买家，设其value为$x_i$，记他的最佳信息为$z^*(x_i)$，其他买家($j \neq i$)的value和message都是$x_j$，则有
 
 $$
 \begin{aligned}
-    m^*(x_i) &= \mathop{argmax}\limits_{m \in \mathcal{X}_i}{\lbrace Q_i(m, x_{-i})x_i - M(m, x_{-i})\rbrace}\\
-    &= \mathop{argmax}\limits_{m \in \mathcal{X}_i}{\lbrace \pi_i(\beta(m, x_{-i}))x_i - \mu_i(\beta (m, x_{-i}))\rbrace}
+    z^*(x_i) &= \mathop{argmax}\limits_{z \in \mathcal{X}_i}{\lbrace Q_i(z, x_{-i})x_i - M(z, x_{-i})\rbrace}\\
+    &= \mathop{argmax}\limits_{z \in \mathcal{X}_i}{\lbrace \pi_i(\beta(z, x_{-i}))x_i - \mu_i(\beta (z, x_{-i}))\rbrace}
 \end{aligned}
 $$
 
@@ -100,29 +100,43 @@ $$
 
 $$
 \begin{aligned}
-    \mathop{argmax}\limits_{m \in \mathcal{X}_i}{\lbrace\pi_i(\beta(m, x_{-i}))x_i - \mu_i(\beta (m, x_{-i}))\rbrace} = \mathop{argmax}\limits_{m \in \mathcal{X}_i}{\lbrace\pi_i(\beta(m, x_{-i}))x_i - \mu_i(\beta (m, x_{-i}))\rbrace}
+    \mathop{argmax}\limits_{z \in \mathcal{X}_i}{\lbrace\pi_i(\beta(z, x_{-i}))x_i - \mu_i(\beta (z, x_{-i}))\rbrace} = x_i
 \end{aligned}
 $$
 
-从而有$m^*(x_i)=x_i$。 Q.E.D.
+从而有$z^*(x_i)=x_i$。因此$\tilde{\beta}(x)=x$是该直接机制的一个贝叶斯纳什均衡。 **Q.E.D.**
 
-### 激励相容性(Incentive Compatibility)
+- 显示原理表明，任给一个机制及其相应的BNE，都存在一个有truthful equilibrium的直接机制与之对应，且两者的outcome是一致的。所以，今后关于机制的讨论只需限定在直接机制的范围内。
 
-- 给定一个直接机制$(Q, M)$，
+### 激励相容(Incentive Compatibility)
+
+具有truthful equilibrium的直接机制满足：任给一组$x_1,x_2,...,x_N$，对第i个买家而言，说真话的回报都是最大的，即有下式
+
+$$
+    Q_i(x_i, x_{-i})x_i - M_i(x_i, x_{-1}) \geq Q_i(z_i, x_{-i})x_i - M_i(z_i, x_{-i})
+$$
+
+对任意的$z_i \in \mathcal{X}_i$都成立。
+
+这是一个很强的条件，我们常常只需要上式在期望的意义下成立。下面引入两个记号：
+
+给定一个直接机制$(Q, M)$，
+
 $$
     q_i(z_i) = \int_{\mathcal{X}_{-i}}Q_i(z_i, x_{-i})f_{-i}(x_{-i})dx_{-i}
 $$
 
-    表示在第i个买家报价$z_i$且其他买家都报出自己的真实估价的情况下第i个买家获得商品的概率。
+表示在第i个买家报价$z_i$且其他买家都报出自己的真实估价的情况下第i个买家获得商品的概率。
 
-- 类似地，
+类似地，
+
 $$
     m_i(z_i) = \int_{\mathcal{X}_{-i}}M_i(z_i, x_{-i})f_{-i}(x_{-i})dx_{-i}
 $$
 
-    表示同样情形下第i个买家支付金额的期望。
+表示同样情形下第i个买家支付金额的期望。
 
-- 因此，该情形下第i个买家的期望回报为：
+- 因此，该情形下第i个买家的期望回报可记为：
 
 $$
     q_i(z_i)x_i - m_i(z_i)
@@ -130,7 +144,7 @@ $$
 
 #### 定义
 
-- 给定一个直接机制$(Q,M)$，如果满足对任意的$i,x_i,z_i$，总有
+给定一个直接机制$(Q,M)$，如果满足对任意的$i,x_i \in \mathcal{X}_i,z_i \in \mathcal{X}_i$，总有
 
 $$
     q_i(x_i)x_i - m_i(x_i) \geq q_i(z_i)x_i - m_i(z_i)
@@ -138,54 +152,58 @@ $$
 
 则称该机制为激励相容(Incentive compatible, IC)的。
 
-- 记$U_i(x_i) = \mathop{max}\limits_{z_i \in \mathcal{X}_i} \lbrace q_i(z_i)x_i - m_i(z_i)\rbrace$，
-称为equilibrium payoff function。
+- 记$V_i(x_i) = \mathop{max}\limits_{z_i \in \mathcal{X}_i} \lbrace q_i(z_i)x_i - m_i(z_i)\rbrace$，
+$V_i(x_i)$又称为第i个买家的equilibrium payoff function。
+
+- 记$U_i(x_i) = q_i(x_i)x_i - m_i(x_i)$，$U_i(x_i)$为说真话的情况下第i个买家的期望回报。
 
 #### 性质
 
-- 因为$U_i$是一族仿射函数的最大值，因此$U_i$是凸函数。
+1) IC与下面的命题等价：对任意$x_i,z_i$，有
 
-- IC等价于对任意$x_i,z_i$，有
 $$
     U_i(z_i) \geq U_i(x_i) + q_i(x_i)(z_i-x_i)
 $$
 
-证明：
+**证明**：
 
-必要性：
+注意到
 
 $$
 \begin{aligned}
-    U_i(z_i) \geq
-    q_i(x_i)z_i - m_i(x_i) &= q_i(x_i)x_i - m_i(x_i) - q_i(x_i)x_i + q_i(x_i)z_i\\
+    q_i(x_i)z_i - m_i(x_i) &= q_i(x_i)x_i - m_i(x_i) + q_i(x_i)z_i - q_i(x_i)x_i\\
     &= U_i(x_i) + q_i(x_i)(z_i - x_i)
 \end{aligned}
 $$
 
-充分性：
+等式左边$\leq q_i(z_i)z_i - m_i(z_i) = U_i(z_i)$当且仅当IC成立。 **Q.E.D.**
 
-- U_i逐点可微，且$U_i'(x_i) = q_i(x_i)$，$U_i(x_i) = U_i(0) + \int_0^{x_i}q_i(t)dt$
+2) U_i逐点可微，且$U_i'(x_i) = q_i(x_i)$，$U_i(x_i) = U_i(0) + \int_0^{x_i}q_i(t)dt$
 
-- 由于$U_i$是凸函数，因此q_i是单调不减的。
-
-- 如果一个直接机制是IC的，则买家的回报只依赖于Q的选取。
+3) 由于$U_i$是凸函数，因此$q_i$是单调不减的。进一步，$q_i$单调不减等价于IC。
 
 
-### Revenue Equivalence
+### 收益等价(Revenue Equivalence)
 
-如果一个直接机制是IC的，则对任意对i和$x_i$，期望的支付金额为
+#### 定理
+
+如果一个直接机制是IC的，则对任意的i和$x_i$，第i个买家期望的支付金额为
 
 $$
-    m_i(x_i) = m_i(0) + q_i(x_i)x_i - \int_0^{x_i}q_i(t)dt
+\begin{aligned}
+    m_i(x_i) &= q_i(x_i)x_i - U_i(xi)\\
+    &= m_i(0) + q_i(x_i)x_i - \int_0^{x_i}q_i(t)dt
+\end{aligned}
 $$
 
-这表明对任意两个不同的IC机制，如果它们有相同的分配函数Q，那么它们的期望支付金额至多只相差一个常数。
+这表明，任意两个具有相同分配函数Q的IC机制在相差一个常数的意义下具有相同的期望支付金额。
+换言之，如果两个IC机制满足：1）在给定values$(x_1,...,x_N)$的情况下，分配给买家的概率分布相同；2）当value为0时，两个机制的期望支付金额相同。那么对于卖家来说，两种机制的期望收益是一样的。
 
-### Individual Rationality (participation constraints)
+### 个体理性(Individual Rationality)
 
 - 卖家不能强迫买家参与拍卖。
 
-- 如果买家不参与拍卖，那么他不可能获得商品，但与此同时他的支出和回报都是0。
+- 如果买家不参与拍卖，那么他一定不会获得商品，同时他的支出也是0(因而回报也为0)。
 
 #### 定义
 
