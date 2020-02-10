@@ -209,7 +209,7 @@ $$
 
 如果一个直接机制满足对任意的i和$x_i$，都有$U_i(x_i) \geq 0$，则称这个机制是individually rational(IR)的。
 
-- 如果该机制是IC的，那该机制是IR的等价于$U_i(0) \geq 0$，进而等价于$m_i(0) \leq 0$。
+- 特别地，如果该机制是IC的，那该机制是IR的等价于$U_i(0) \geq 0$，进而等价于$m_i(0) \leq 0$。
 
 ### 最优机制
 
@@ -217,7 +217,7 @@ $$
 
 $$
 \begin{aligned}
-    E(m_i(\mathcal{X}_i)) &= \int_0^{w_i}m_i(x_i)f_i(x_i)dx_i \\
+    E(m_i(x_i)) &= \int_0^{w_i}m_i(x_i)f_i(x_i)dx_i \\
     &= m_i(0) + \int_0^{w_i}q_i(x_i)x_if_i(x_i)dx_i - \int_0^{w_i} \int_0^{x_i} q_i(t_i)dt_i f_i(x_i)dx_i \\
     &= m_i(0) + \int_0^{w_i}q_i(x_i)x_if_i(x_i)dx_i - \int_0^{w_i} \int_{t_i}^{w_i}q_i(t_i)f_i(x_i)dx_idt_i \\
     &= m_i(0) + \int_0^{w_i}q_i(x_i)x_if_i(x_i)dx_i - \int_0^{w_i} q_i(t_i)[F_i(w_i)-F_i(t_i)]dt_i \\
