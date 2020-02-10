@@ -1,5 +1,5 @@
 ---
-title: Intermediate Microeconomics - Ch2 Budget Constraint
+title: 读书笔记 - Intermediate Microeconomics - Ch2 Budget Constraint
 date: 2019-11-03
 categories:
 - notes

@@ -1,5 +1,5 @@
 ---
-title: Intermediate Microeconomics - Ch3 Preferences
+title: 读书笔记 - Intermediate Microeconomics - Ch3 Preferences
 date: 2019-11-05
 categories:
 - notes
@@ -7,7 +7,7 @@ tags:
 - economics
 ---
 
-上一章主要描述了消费者的消费能力/购买力，这一章则关注如何描述消费者的preference。
+上一章关注的问题是如何描述消费者的消费能力/购买力，这一章则讨论如何描述消费者的preference。
 
 ### Preferences
 
@@ -17,9 +17,9 @@ tags:
 
 - reflexive，同一个consumption bundle和自己在preference的意义下是一样的；
 
-- transitive，如果$\vec{x} > \vec{y}$且$\vec{y} > \vec{z}$，则有$\vec{x} > \vec{z}$。这个条件比较特殊，它是最佳选择存在的前提因而是必要的，但在实际生活中并非永远成立。
+- transitive，如果$\vec{x} > \vec{y}$且$\vec{y} > \vec{z}$，则有$\vec{x} > \vec{z}$。这个条件比较特殊，它在实际生活中并非永远成立，但它是best preference存在的前提条件，因而也是必需的。
 
-preference关系可以分为strictly preference(>)和weakly preference($\geq$)
+preference关系可以进一步分为strictly preference(>)和weakly preference($\geq$).
 
 ### Indifference curve
 
@@ -45,7 +45,7 @@ $$
 
 #### Bads
 
-Bad的含义是消费者所厌恶的商品(goods)。在某些情况下，为了购买喜欢goods我们可能需要同时购买一些bads。此时的indifference curve是一条斜率为正的曲线。
+Bad的含义是消费者所厌恶的商品(goods)。在某些情况下，为了购买喜欢的goods，我们需要同时购买一些bads。此时的indifference curve是一条斜率为正的曲线。
 
 #### Neutrals
 
@@ -73,4 +73,4 @@ $$
 
 ### The Marginal Rate of Substitution
 
-indifference curve的斜率（导数）又称为marginal rate of substitution(MRS)。这个名字的来源是它的含义：它表示消费者愿意用（极少量的）另一种商品替换（极少量的）这种商品的交换数量比。
+indifference curve的斜率（导数）又称为marginal rate of substitution(MRS)。它表示消费者愿意用（极少量的）另一种商品替换（极少量的）这种商品的交换数量比。
